@@ -109,6 +109,7 @@ We extend our gratitude to [DeepSeek](https://github.com/deepseek-ai/DeepSeek-R1
 }
 ```
 **TableMind**
+
 *TableMind is built upon the Agent-R1 framework, leveraging its end-to-end reinforcement learning pipeline to train a specialized tool-augmented agent for structured table reasoning.*
 ```md
 @article{jiang2025tablemind,

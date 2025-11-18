@@ -108,7 +108,16 @@ We extend our gratitude to [DeepSeek](https://github.com/deepseek-ai/DeepSeek-R1
   url          = {https://github.com/0russwest0/Agent-R1},
 }
 ```
-
+**TableMind**
+*TableMind is built upon the Agent-R1 framework, leveraging its end-to-end reinforcement learning pipeline to train a specialized tool-augmented agent for structured table reasoning.*
+```md
+@article{jiang2025tablemind,
+  title={TableMind: An Autonomous Programmatic Agent for Tool-Augmented Table Reasoning},
+  author={Jiang, Chuang and Cheng, Mingyue and Tao, Xiaoyu and Mao, Qingyang and Ouyang, Jie and Liu, Qi},
+  journal={arXiv preprint arXiv:2509.06278},
+  year={2025}
+}
+```
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=0russwest0/Agent-R1&type=Date)](https://www.star-history.com/#0russwest0/Agent-R1&Date)

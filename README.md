@@ -100,15 +100,17 @@ We extend our gratitude to [DeepSeek](https://github.com/deepseek-ai/DeepSeek-R1
 ## Citation
 **Agent-R1**
 ```md
-@misc{Agent-R1,
-  author       = {Jie Ouyang, Ruiran Yan, Yucong Luo, Mingyue Cheng, Qi Liu, Zirui Liu, Shuo Yu, Daoyu Wang},
-  title        = {Training Powerful LLM Agents with End-to-End Reinforcement Learning},
-  year         = {2025},
-  organization = {GitHub},
-  url          = {https://github.com/0russwest0/Agent-R1},
+@misc{cheng2025agentr1trainingpowerfulllm,
+      title={Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning}, 
+      author={Mingyue Cheng and Jie Ouyang and Shuo Yu and Ruiran Yan and Yucong Luo and Zirui Liu and Daoyu Wang and Qi Liu and Enhong Chen},
+      year={2025},
+      eprint={2511.14460},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2511.14460}, 
 }
 ```
-**TableMind**
+**TableMind**(WSDM 2026)
 
 *TableMind is built upon the Agent-R1 framework, leveraging its end-to-end reinforcement learning pipeline to train a specialized tool-augmented agent for structured table reasoning.*
 ```md

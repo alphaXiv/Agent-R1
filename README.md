@@ -1,7 +1,9 @@
 <h1 align="center"> Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning </h1>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2511.14460">📖 <strong>Paper</strong></a> 
+  <a href="https://arxiv.org/abs/2511.14460">
+  <img src="https://img.shields.io/badge/Paper-Arxiv-b31b1b?logo=arxiv&logoColor=white" alt="Paper Arxiv">
+</a>
   <a href="https://deepwiki.com/0russwest0/Agent-R1"><img src="https://devin.ai/assets/deepwiki-badge.png" alt="Ask DeepWiki.com" height="20"/></a>
   <a href="https://github.com/0russwest0/Agent-R1/stargazers"><img src="https://img.shields.io/github/stars/0russwest0/Agent-R1" alt="GitHub Repo stars"></a>
   <a href="https://github.com/0russwest0/Agent-R1/network/members"><img src="https://img.shields.io/github/forks/0russwest0/Agent-R1" alt="GitHub forks"></a>
@@ -16,6 +18,8 @@
 <details open>
 <summary><b>Recent Updates</b></summary>
 
+- [2025.11.18] **Technical Report**: We have released the technical report on arXiv. Read the paper [here](https://arxiv.org/abs/2511.14460).
+  
 - [2025.05.06] **Tool Environment Redesign**: Completely redesigned and abstracted tool environments to support more flexible and diverse agent-tool interactions patterns.
 
 - [2025.05.06] **Critical Bug Fixes**: Fixed GRPO and Reinforce++ training crash issues that were causing NaN values during training. See [issue #30](https://github.com/0russwest0/Agent-R1/issues/30) for details.

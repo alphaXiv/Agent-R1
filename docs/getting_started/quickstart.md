@@ -1,17 +1,28 @@
 ### Quick Start: Try Default Search Tool on HotpotQA
-#### 1. Install `FlagEmbedding` and `faiss`
+
+#### 1. Start Docker Container
 ```bash
-pip3 install FlagEmbedding
-pip3 install faiss-cpu
+cd /home/ubuntu/sandbox/Agent-R1 && sudo docker run -d --gpus all --name verl-agent-r1 --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v /home/ubuntu/sandbox/Agent-R1:/workspace/Agent-R1 hiyouga/verl:ngc-th2.6.0-cu126-vllm0.8.3-flashinfer0.2.2-cxx11abi0 sleep infinity
 ```
 
-#### 2. Download and preprocess HotpotQA dataset
+#### 2. Install Dependencies
 ```bash
-# Create data directory
-mkdir -p data/hotpotqa
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && pip3 install FlagEmbedding faiss-cpu"
+```
 
-# Run the preprocessing script
-python examples/data_preprocess/hotpotqa.py --local_dir ./data/hotpotqa
+#### 3. Initialize Git Submodules
+```bash
+sudo docker exec verl-agent-r1 bash -c "git config --global --add safe.directory '*' && cd /workspace/Agent-R1 && git submodule update --init --recursive"
+```
+
+#### 4. Install VERL
+```bash
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1/verl && pip3 install -e ."
+```
+
+#### 5. Download and Preprocess HotpotQA Dataset
+```bash
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && mkdir -p data/hotpotqa && python examples/data_preprocess/hotpotqa.py --local_dir ./data/hotpotqa"
 ```
 
 This script will:
@@ -19,19 +30,13 @@ This script will:
 - Process the data into the format required by Agent-R1
 - Save the processed data as train.parquet and validation.parquet in the specified directory
 
-#### 3. Build hotpotqa search index
+#### 6. Build HotpotQA Search Index
 ```bash
-# Download the corpus file (gzipped)
-mkdir -p data/corpus/hotpotqa
-wget https://huggingface.co/datasets/BeIR/hotpotqa/resolve/main/corpus.jsonl.gz -O data/corpus/hotpotqa/corpus.jsonl.gz
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && mkdir -p data/corpus/hotpotqa && wget -q https://huggingface.co/datasets/BeIR/hotpotqa/resolve/main/corpus.jsonl.gz -O data/corpus/hotpotqa/corpus.jsonl.gz && gunzip -c data/corpus/hotpotqa/corpus.jsonl.gz > data/corpus/hotpotqa/hpqa_corpus.jsonl"
+```
 
-# Extract the gzipped file
-gunzip -c data/corpus/hotpotqa/corpus.jsonl.gz > data/corpus/hotpotqa/hpqa_corpus.jsonl
-
-# Process the corpus and build the search index
-cd scripts/hotpotqa_search
-python process_hotpotqa.py
-cd ../../
+```bash
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1/scripts/hotpotqa_search && python process_hotpotqa.py"
 ```
 
 This script will:
@@ -40,17 +45,21 @@ This script will:
 - Build a FAISS index for efficient similarity search
 - Save the embeddings and index files in the data/corpus/hotpotqa directory
 
-#### 4. Run PPO/REINFORCE++/GRPO training with Qwen2.5-1.5B-Instruct
+#### 7. Configure Weights & Biases (Optional)
+```bash
+sudo docker exec verl-agent-r1 bash -c "wandb login YOUR_API_KEY"
+```
+
+#### 8. Run PPO/REINFORCE++/GRPO Training with Qwen2.5-1.5B-Instruct
 ```bash
 # Run the PPO training script
-cp examples/trainer/run_ppo_hotpotqa.sh ./
-bash run_ppo_hotpotqa.sh
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && cp examples/trainer/run_ppo_hotpotqa.sh ./ && bash run_ppo_hotpotqa.sh"
+
 # Run the REINFORCE++ training script
-cp examples/trainer/run_rpp_hotpotqa.sh ./
-bash run_rpp_hotpotqa.sh
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && cp examples/trainer/run_rpp_hotpotqa.sh ./ && bash run_rpp_hotpotqa.sh"
+
 # Run the GRPO training script
-cp examples/trainer/run_grpo_hotpotqa.sh ./
-bash run_grpo_hotpotqa.sh
+sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && cp examples/trainer/run_grpo_hotpotqa.sh ./ && bash run_grpo_hotpotqa.sh"
 ```
 
 ### 5. Results on HotpotQA

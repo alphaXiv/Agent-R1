@@ -2,24 +2,13 @@
 
 **Clone the repository**
 ```bash
-git clone https://github.com/0russwest0/Agent-R1.git
+git clone https://github.com/alphaXiv/Agent-R1.git
 cd Agent-R1
 ```
 
-**Install `verl`**
-```bash
-# Create the conda environment
-conda create -n verl python==3.10
-conda activate verl
-
-# install verl together with some lightweight dependencies in setup.py
-git submodule update --init --recursive
-cd verl
-pip3 install -e .
-
-# Install the latest stable version of vLLM
-pip3 install vllm
-
-# Install flash-attn
-pip3 install flash-attn --no-build-isolation
+**Install `docker image for verl+vllm rollout`**
 ```
+sudo docker pull hiyouga/verl:ngc-th2.6.0-cu126-vllm0.8.3-flashinfer0.2.2-cxx11abi0
+
+```
+

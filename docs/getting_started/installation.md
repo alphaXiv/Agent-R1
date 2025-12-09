@@ -1,6 +1,6 @@
 ### Environment Setup
 
-We used GPU Base Image 22.04 on Lambda Labs with 4xa100s 80GM SXM
+We used GPU Base Image 22.04 on Lambda Labs with 4xA100s 80GB SXM
 
 **Clone the repository**
 ```bash

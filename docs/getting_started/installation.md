@@ -1,5 +1,7 @@
 ### Environment Setup
 
+We used GPU Base Image 22.04 on Lambda Labs with 4xa100s 80GM SXM
+
 **Clone the repository**
 ```bash
 git clone https://github.com/alphaXiv/Agent-R1.git

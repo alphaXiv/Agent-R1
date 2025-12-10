@@ -14,3 +14,4 @@ sudo docker pull hiyouga/verl:ngc-th2.6.0-cu126-vllm0.8.3-flashinfer0.2.2-cxx11a
 
 ```
 
+Rest of the setup and procedure for training is given in [quickstart.md](./quickstart.md)

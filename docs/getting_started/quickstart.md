@@ -52,13 +52,13 @@ sudo docker exec verl-agent-r1 bash -c "wandb login YOUR_API_KEY"
 
 #### 8. Run PPO/REINFORCE++/GRPO Training with Qwen2.5-1.5B-Instruct
 ```bash
-# Run the PPO training script
+# Run the PPO training script (Will take around 10-12 hours on 4xA100 80 GB)
 sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && cp examples/trainer/run_ppo_hotpotqa.sh ./ && bash run_ppo_hotpotqa.sh"
 
-# Run the REINFORCE++ training script
+# Run the REINFORCE++ training script (Will take around 12 hours on 4xA100 80GB)
 sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && cp examples/trainer/run_rpp_hotpotqa.sh ./ && bash run_rpp_hotpotqa.sh"
 
-# Run the GRPO training script
+# Run the GRPO training script (Will take around 15 hours on 4xA100 80GB)
 sudo docker exec verl-agent-r1 bash -c "cd /workspace/Agent-R1 && cp examples/trainer/run_grpo_hotpotqa.sh ./ && bash run_grpo_hotpotqa.sh"
 ```
 

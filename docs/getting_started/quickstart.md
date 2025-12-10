@@ -2,7 +2,7 @@
 
 #### 1. Start Docker Container
 ```bash
-cd /home/ubuntu/sandbox/Agent-R1 && sudo docker run -d --gpus all --name verl-agent-r1 --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v /home/ubuntu/sandbox/Agent-R1:/workspace/Agent-R1 hiyouga/verl:ngc-th2.6.0-cu126-vllm0.8.3-flashinfer0.2.2-cxx11abi0 sleep infinity
+cd Agent-R1 && sudo docker run -d --gpus all --name verl-agent-r1 --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v Agent-R1:/workspace/Agent-R1 hiyouga/verl:ngc-th2.6.0-cu126-vllm0.8.3-flashinfer0.2.2-cxx11abi0 sleep infinity
 ```
 
 #### 2. Install Dependencies

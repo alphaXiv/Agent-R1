@@ -65,8 +65,8 @@
 - **Additional Use Cases**: More example implementations across diverse scenarios and domains
 
 ## Get Started
-- [Environment Setup](https://github.com/0russwest0/Agent-R1/blob/main/docs/getting_started/installation.md)
-- [Quick Start: Try Default Search Tool on HotpotQA](https://github.com/0russwest0/Agent-R1/blob/main/docs/getting_started/quickstart.md) (see also: [Results on HotpotQA](https://github.com/0russwest0/Agent-R1/blob/main/docs/getting_started/quickstart.md#5-results-on-hotpotqa))
+- [Environment Setup](https://github.com/alphaXiv/Agent-R1/blob/main/docs/getting_started/installation.md)
+- [Quick Start: Try Default Search Tool on HotpotQA](https://github.com/alphaXiv/Agent-R1/blob/main/docs/getting_started/quickstart.md) (see also: [Results on HotpotQA](https://github.com/alphaXiv/Agent-R1/blob/main/docs/getting_started/quickstart.md#5-results-on-hotpotqa))
 
 ## Extending Agent-R1 with Your Own Tools and Environments
 
@@ -77,8 +77,8 @@ Agent-R1 provides a flexible architecture for creating custom tools and tool env
 
 For detailed guidance on extending Agent-R1, refer to our tutorials:
 
-- [Customizing Tools for Multi-hop QA](https://github.com/0russwest0/Agent-R1/blob/main/docs/tutorial/multihopqa.md): Learn how to create and customize tools for retrieving information across multiple knowledge sources
-- [Customizing Tool Environment for ReTool](https://github.com/0russwest0/Agent-R1/blob/main/docs/tutorial/retool.md): Understand how to implement tool environments that integrate code execution with LLM reasoning
+- [Customizing Tools for Multi-hop QA](https://github.com/alphaXiv/Agent-R1/blob/main/docs/tutorial/multihopqa.md): Learn how to create and customize tools for retrieving information across multiple knowledge sources
+- [Customizing Tool Environment for ReTool](https://github.com/alphaXiv/Agent-R1/blob/main/docs/tutorial/retool.md): Understand how to implement tool environments that integrate code execution with LLM reasoning
 
 Additional resources are available in the codebase:
 - Example tools: `agent_r1/tool/tools/`
